@@ -1,17 +1,36 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  for(let i = 0; i < array.length; i++) {
+      for(let j = 0; j < array.length; j++) {
+          if (i !== j) { 
+              let sum = array[i] + array[j];
+              if(sum === target) {
+                  return true;
+              }
+          }
+      }
+  }
+  return false;
 }
+
 
 /* 
   Write the Big O time complexity of your function here
+  The function uses a quadratic time complexity. This is because there are two nested 
+  loops iterating through the array, resulting in a quadratic time complexity.
 */
 
 /* 
-  Add your pseudocode here
-*/
+  iterate through the array twice, while adding the elements.
+  if a pair adds up to the target, then it should return true, otherwise it returns false
+ */
 
 /*
-  Add written explanation of your solution here
+   It iterates through each element of the array twice, attempting to find a pair of numbers 
+  whose sum equals the target. If such a pair is found, the function returns true; otherwise, 
+  it returns false after checking all possible pairs.
+  It ensures that it does not add the same element to itself by excluding cases where the indices of 
+  the array elements are equal.
+
 */
 
 // You can run `node index.js` to view these console logs
